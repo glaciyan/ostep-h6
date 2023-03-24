@@ -113,7 +113,7 @@ int main(void)
         // because we measure 2 pipe write/reads so we also have to halve it
         long double estimated_time = ((long double) (tv_end.tv_usec - tv_start.tv_usec)) / ITERATIONS * 2;
 
-        printf("estimated time: %Lfus\n", estimated_time);
+        printf("Average time: %Lfus\n", estimated_time);
     }
 
     return 0;

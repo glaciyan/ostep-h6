@@ -41,7 +41,7 @@ int main(void)
 
     long double average_time = (long double) time_sum / (long double) calls;
 
-    printf("Average time is: %Lfus\n", average_time);
+    printf("Average time: %Lfus\n", average_time);
 
     free(times);
     close(fd);
