@@ -1,0 +1,7 @@
+---
+# options: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+BasedOnStyle: Microsoft
+IndentWidth: 4
+ColumnLimit: 120
+SpaceAfterCStyleCast: true
+UseTab: Never
