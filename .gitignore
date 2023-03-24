@@ -1,3 +1,4 @@
-./bench_sys_call
+bench_sys_call
+bench_context
 somefile.txt
 .idea
