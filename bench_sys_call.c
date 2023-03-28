@@ -1,3 +1,5 @@
+#define ITERATIONS 10000
+
 #define _POSIX_C_SOURCE 1
 
 #include <fcntl.h>
@@ -10,15 +12,14 @@
 
 int main(void)
 {
-    int32_t calls = 100000;
-    int32_t *times = (int32_t *) calloc(calls, sizeof(int32_t));
+    int32_t *times = (int32_t *) calloc(ITERATIONS, sizeof(int32_t));
 
     struct timeval tv_start;
     struct timeval tv_end;
 
     int fd = open("./somefile.txt", O_CREAT | O_WRONLY, S_IRWXU);
 
-    for (int32_t i = 1; i < calls; i++)
+    for (int32_t i = 1; i < ITERATIONS; i++)
     {
         gettimeofday(&tv_start, NULL);
 
@@ -34,12 +35,12 @@ int main(void)
 
     uintmax_t time_sum = 0;
 
-    for (int32_t i = 0; i < calls; i++)
+    for (int32_t i = 0; i < ITERATIONS; i++)
     {
         time_sum += times[i];
     }
 
-    long double average_time = (long double) time_sum / (long double) calls;
+    long double average_time = (long double) time_sum / (long double) ITERATIONS;
 
     printf("Average time: %Lfus\n", average_time);
 
